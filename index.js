@@ -1,8 +1,10 @@
 const express = require('express');
 const WebSocket = require('ws');
+const cors = require('cors');
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 const base64urlDecode = (str) => {
     str = str.replace(/-/g, '+').replace(/_/g, '/');
